@@ -41,11 +41,11 @@
                       <Component id="btn6" min="-2" pref="145" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <Component id="btn9" min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="btn7" min="-2" pref="145" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="btn8" min="-2" pref="145" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Component id="btn7" min="-2" pref="145" max="-2" attributes="0"/>
+                      <Component id="btn9" min="-2" pref="145" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace pref="30" max="32767" attributes="0"/>
@@ -77,9 +77,9 @@
               </Group>
               <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="btn7" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
-                  <Component id="btn8" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
                   <Component id="btn9" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                  <Component id="btn8" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                  <Component id="btn7" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="txtvisor" min="-2" pref="42" max="-2" attributes="0"/>
@@ -107,6 +107,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn2ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn3">
       <Properties>
@@ -114,6 +117,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn3ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn4">
       <Properties>
@@ -121,6 +127,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn4ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn5">
       <Properties>
@@ -128,6 +137,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn5ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn6">
       <Properties>
@@ -135,6 +147,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn6ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn7">
       <Properties>
@@ -142,6 +157,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn7ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn8">
       <Properties>
@@ -149,6 +167,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn8ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="btn9">
       <Properties>
@@ -156,6 +177,9 @@
           <Font name="Segoe UI" size="48" style="1"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn9ActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="txtvisor">
       <Properties>
@@ -166,6 +190,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="REINICIAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnreiniciarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

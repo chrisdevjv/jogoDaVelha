@@ -57,24 +57,69 @@ public class Jogo extends javax.swing.JFrame {
         });
 
         btn2.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn2ActionPerformed(evt);
+            }
+        });
 
         btn3.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn3ActionPerformed(evt);
+            }
+        });
 
         btn4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn4ActionPerformed(evt);
+            }
+        });
 
         btn5.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn5ActionPerformed(evt);
+            }
+        });
 
         btn6.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn6ActionPerformed(evt);
+            }
+        });
 
         btn7.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn7ActionPerformed(evt);
+            }
+        });
 
         btn8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn8ActionPerformed(evt);
+            }
+        });
 
         btn9.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        btn9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn9ActionPerformed(evt);
+            }
+        });
 
         txtvisor.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         btnreiniciar.setText("REINICIAR");
+        btnreiniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnreiniciarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -96,11 +141,11 @@ public class Jogo extends javax.swing.JFrame {
                         .addGap(32, 32, 32)
                         .addComponent(btn6, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(32, 32, 32)
-                        .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(30, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -124,9 +169,9 @@ public class Jogo extends javax.swing.JFrame {
                     .addComponent(btn4, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn8, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btn7, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(26, 26, 26)
                 .addComponent(txtvisor, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -161,15 +206,230 @@ public class Jogo extends javax.swing.JFrame {
     
     }
     
+    public void limpaPosicoes(){
+        for(i = 0; i < 3; i++){
+            for(k = 0; k < 3; k++){
+                posvetor[i][k] = "";
+            }
+        }
+    }
+    
+    public void desativaBotoes() {
+        btn1.setEnabled(false);
+        btn2.setEnabled(false);
+        btn3.setEnabled(false);
+        btn4.setEnabled(false);
+        btn5.setEnabled(false);
+        btn6.setEnabled(false);
+        btn7.setEnabled(false);
+        btn8.setEnabled(false);
+        btn9.setEnabled(false);
+    
+    }
+    
+    
+    public void verificaPosicoes (){
+        contpos=0;
+        for(i = 0; i < 3; i++){
+            for(k = 0; k < 3; k++){
+                if(posvetor[i][k]=="x"|posvetor[i][k]=="o"){
+                    contpos+=1;
+                }
+            }
+        }
+    }
+    
+    public void verificaVencedor(){
+        linha1 = posvetor[0][0]+posvetor[0][1]+posvetor[0][2];
+        linha2 = posvetor[1][0]+posvetor[1][1]+posvetor[1][2];
+        linha3 = posvetor[2][0]+posvetor[2][1]+posvetor[2][2];
+        
+        coluna1 = posvetor[0][0] +posvetor[1][0]+posvetor[2][0];
+        coluna2 = posvetor[0][1]+posvetor[1][1]+posvetor[2][1];
+        coluna3 = posvetor[0][2]+posvetor[1][2]+posvetor[2][2];
+        
+        diagonal1 = posvetor[0][0]+posvetor[1][1]+posvetor[2][2];
+        diagonal2 = posvetor[0][2]+posvetor[1][1]+posvetor[2][0];
+       
+        
+        if(linha1.equals("xxx")| linha2.equals("xxx")| linha3.equals("xxx")|
+           coluna1.equals("xxx")| coluna2.equals("xxx")| coluna3.equals("xxx")|
+           diagonal1.equals("xxx")| diagonal2.equals("xxx")){
+                txtvisor.setText("O vencedor é X");
+                desativaBotoes();
+        }
+        else if(linha1.equals("ooo")| linha2.equals("ooo")| linha3.equals("ooo")|
+           coluna1.equals("ooo")| coluna2.equals("ooo")| coluna3.equals("ooo")|
+           diagonal1.equals("ooo")| diagonal2.equals("ooo")){
+                txtvisor.setText("O vencedor é O");
+                desativaBotoes();
+        }
+        else if(contpos == 9){
+            txtvisor.setText("Empate!");
+        }
+               
+    }
+    
     private void btn1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn1ActionPerformed
         // botao1
         verificaJogador();
         if(op==1){
             btn1.setText("X");
             posvetor[0][0]="x";
+        }else {
+            btn1.setText("O");
+            posvetor[0][0]="o";
         }
         btn1.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
     }//GEN-LAST:event_btn1ActionPerformed
+
+    private void btn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn2ActionPerformed
+        // botao2:
+        verificaJogador();
+        if(op==1){
+            btn2.setText("X");
+            posvetor[0][1]="x";
+        }else {
+            btn2.setText("O");
+            posvetor[0][1]="o";
+        }
+        btn2.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn2ActionPerformed
+
+    private void btn3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn3ActionPerformed
+        // botao3:
+        verificaJogador();
+        if(op==1){
+            btn3.setText("X");
+            posvetor[0][2]="x";
+        }else {
+            btn3.setText("O");
+            posvetor[0][2]="o";
+        }
+        btn3.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn3ActionPerformed
+
+    private void btn4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn4ActionPerformed
+        // botao4:
+        verificaJogador();
+        if(op==1){
+            btn4.setText("X");
+            posvetor[1][0]="x";
+        }else {
+            btn4.setText("O");
+            posvetor[1][0]="o";
+        }
+        btn4.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn4ActionPerformed
+
+    private void btn5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn5ActionPerformed
+        // botao5:
+        verificaJogador();
+        if(op==1){
+            btn5.setText("X");
+            posvetor[1][1]="x";
+        }else {
+            btn5.setText("O");
+            posvetor[1][1]="o";
+        }
+        btn5.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn5ActionPerformed
+
+    private void btn6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn6ActionPerformed
+        // botao 6:
+        verificaJogador();
+        if(op==1){
+            btn6.setText("X");
+            posvetor[1][2]="x";
+        }else {
+            btn6.setText("O");
+            posvetor[1][2]="o";
+        }
+        btn6.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn6ActionPerformed
+
+    private void btn7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn7ActionPerformed
+        // botao 7:
+        verificaJogador();
+        if(op==1){
+            btn7.setText("X");
+            posvetor[2][0]="x";
+        }else {
+            btn7.setText("O");
+            posvetor[2][0]="o";
+        }
+        btn7.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn7ActionPerformed
+
+    private void btn8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn8ActionPerformed
+        // botao 8:
+        verificaJogador();
+        if(op==1){
+            btn8.setText("X");
+            posvetor[2][1]="x";
+        }else {
+            btn8.setText("O");
+            posvetor[2][1]="o";
+        }
+        btn8.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn8ActionPerformed
+
+    private void btn9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn9ActionPerformed
+        // botao 9:
+        verificaJogador();
+        if(op==1){
+            btn9.setText("X");
+            posvetor[2][2]="x";
+        }else {
+            btn9.setText("O");
+            posvetor[2][2]="o";
+        }
+        btn9.setEnabled(false);
+        verificaPosicoes();
+        verificaVencedor();
+    }//GEN-LAST:event_btn9ActionPerformed
+
+    private void btnreiniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnreiniciarActionPerformed
+        // Reiniciar:
+        btn1.setText("");
+        btn1.setEnabled(true);
+        btn2.setText("");
+        btn2.setEnabled(true);
+        btn3.setText("");
+        btn3.setEnabled(true);
+        btn4.setText("");
+        btn4.setEnabled(true);
+        btn5.setText("");
+        btn5.setEnabled(true);
+        btn6.setText("");
+        btn6.setEnabled(true);
+        btn7.setText("");
+        btn7.setEnabled(true);
+        btn8.setText("");
+        btn8.setEnabled(true);
+        btn9.setText("");
+        btn9.setEnabled(true);
+        limpaPosicoes();
+        txtvisor.setText("");
+        joga = true;
+        jogb = true;
+    }//GEN-LAST:event_btnreiniciarActionPerformed
 
     /**
      * @param args the command line arguments
